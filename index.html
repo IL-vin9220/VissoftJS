@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Tập JS</title>
+</head>
+<body>
+    <div class="bai1">
+        <h3>Bài 1: Nhập vào hai số a và b, và kiểm tra xem a có chia hết cho b hay không</h3>
+        <label for="">a: </label>
+        <input type="text" id="inputA">
+        <label for="">b: </label>
+        <input type="text" id="inputB">
+        <span id="resultBai1"></span>
+        <button type="button" onclick="bai1()">Check a%b</button>
+    </div>
+    <br>
+    <div class="bai2">
+        <h3>Bài 2: Nhập tuổi và in ra kết quả nếu tuổi học sinh đó không đủ điều kiện vào học lớp 10.</h3>
+        <label for="">Tuổi của học sinh: </label>
+        <input type="text" id="inputAge">
+        <span id="resultBai2"></span>
+        <button type="button" onclick="bai2()">Check age</button>
+    </div>
+    <br>
+    <div class="bai3">
+        <h3>Bài 3: Nhập một số nguyên bất kỳ và in kết quả ra màn hình để nói cho người dùng biết số đó là lớn hay nhỏ hơn 0</h3>
+        <label for="">Số nguyên: </label>
+        <input type="text" id="inputNumber">
+        <span id="resultBai3"></span>
+        <button type="button" onclick="bai3()">Check number</button>
+    </div>
+    <br>
+    <div class="bai4">
+        <h3>Bài 4: Nhập 3 số nguyên và tìm giá trị lớn nhất của ba số nguyên đó</h3>
+        <label for="">Số nguyên 1: </label>
+        <input type="text" id="inputnum1">
+        <label for="">Số nguyên 2: </label>
+        <input type="text" id="inputnum2">
+        <label for="">Số nguyên 3: </label>
+        <input type="text" id="inputnum3">
+        <span id="resultBai4"></span>
+        <button type="button" onclick="bai4()">Check max number</button>
+    </div>
+    <br>
+    <div class="bai5">
+        <h3>Bài 5: Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ</h3>
+        <label for="">Điểm kiểm tra: </label>
+        <input type="text" id="inputScoreTest">
+        <label for="">Điểm giữa kì: </label>
+        <input type="text" id="inputSemesterScore">
+        <label for="">Điểm cuối kì: </label>
+        <input type="text" id="inputFinalScore">
+        <span id="resultBai5"></span>
+        <button type="button" onclick="bai5()">Check học lực</button>
+    </div>
+    <br>
+    <div class="bai6">
+        <h3>Bài 6: Kiểm tra xem 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam giác.</h3>
+        <label for="">Cạnh a: </label>
+        <input type="text" id="inputA_Tria">
+        <label for="">Cạnh b: </label>
+        <input type="text" id="inputB_Tria">
+        <label for="">Cạnh c: </label>
+        <input type="text" id="inputC_Tria">
+        <span id="resultBai6"></span>
+        <button type="button" onclick="bai6()">Check tam giác</button>
+    </div>
+    <br>
+    <div class="bai7">
+        <h3>Bài 7: Kiểm tra xem một số nhập vào có phải là tuổi của một người không.</h3>
+        <label for="">Tuổi của 1 người: </label>
+        <input type="text" id="inputAgePerson">
+        <span id="resultBai7"></span>
+        <button type="button" onclick="bai7()">Kiểm tra tuổi</button>
+    </div>
+    <br>
+    <div class="bai8">
+        <h3>Bài 8: Tính diện tích hình vuông khi biết cạnh a.</h3>
+        <label for="">Cạnh của hình vuông: </label>
+        <input type="text" id="inputHV">
+        <span id="resultBai8"></span>
+        <button type="button" onclick="bai8()">Tính diện tích</button>
+    </div>
+    <br>
+    <div class="bai9">
+        <h3>Bài 9: Tính diện tích hình chữ nhật khi biết 02 cạnh a, b.</h3>
+        <label for="">Cạnh a: </label>
+        <input type="text" id="inputA_Rect">
+        <label for="">Cạnh b: </label>
+        <input type="text" id="inputB_Rect">
+        <span id="resultBai9"></span>
+        <button type="button" onclick="bai9()">Tính diện tích HCN</button>
+    </div>
+    <br>
+    <div class="bai10">
+        <h3>Bài 10: Tính diện tích tam giác vuông khi biết 02 cạnh kề a, b.</h3>
+        <label for="">Cạnh a: </label>
+        <input type="text" id="inputA_TGV">
+        <label for="">Cạnh b: </label>
+        <input type="text" id="inputB_TGV">
+        <span id="resultBai10"></span>
+        <button type="button" onclick="bai10()">Tính diện tích tam giác vuông</button>
+    </div>
+    <br>
+    <div class="bai11">
+        <h3>Bài 11: Giải phương trình bậc 1.</h3>
+        <p>Giải phương trình bậc 1</p><br>
+        <label for="">Hệ số a: </label>
+        <input type="text" id="inputA_PT1">
+        <label for="">Hệ số b: </label>
+        <input type="text" id="inputB_PT1">
+        <span id="resultBai11"></span>
+        <button type="button" onclick="bai11()">Giải phương trình</button>
+    </div>
+    <br>
+    <div class="bai12">
+        <h3>Bài 12: Giải phương trình bậc 2.</h3>
+        <p>Giải phương trình bậc 2</p>
+        <label for="">Hệ số a: </label>
+        <input type="text" id="inputA_PT2">
+        <label for="">Hệ số b: </label>
+        <input type="text" id="inputB_PT2">
+        <label for="">Hệ số c: </label>
+        <input type="text" id="inputC_PT2">
+        <span id="resultBai12"></span>
+        <button type="button" onclick="bai12()">Giải phương trình</button>
+    </div>
+    <br>
+    <div class="bai13">
+        <h3>Bài 13: Chuyển từ độ C sang độ F.</h3>
+        <label for="">Độ C: </label>
+        <input type="text" id="inputCensius">
+        <span id="resultBai13"></span>
+        <button type="button" onclick="bai13()">Chuyển đổi C -> F</button>
+    </div>
+    <br>
+    <div class="bai14">
+        <h3>Bài 14: Chuyển từ mét sang feet</h3>
+        <label for="">Nhập số m cần đổi: </label>
+        <input type="text" id="inputMeter">
+        <span id="resultBai14"></span>
+        <button type="button" onclick="bai14()">Đổi m sang feet</button>
+    </div>
+    <br>
+    <div class="bai15">
+        <h3>Bài 15: Kiểu tra kiểu dữ liệu của 2 biến</h3>
+        <label for="">Nhập biến 1: </label>
+        <input type="text" id="inputVar1">
+        <label for="">Nhập biến 2: </label>
+        <input type="text" id="inputVar2">
+        <span id="resultBai15"></span>
+        <button type="button" onclick="bai15()">Kiểm tra kiểu dữ liệu</button>
+    </div>
+</body>
+<script>
+    function bai1(){
+        // Bài 1: Nhập vào hai số a và b, và kiểm tra xem a có chia hết cho b hay không
+        let a=parseInt(document.getElementById("inputA").value);
+        let b=parseInt(document.getElementById("inputB").value);
+
+        if(a%b==0){document.getElementById("resultBai1").innerText = "a chia hết cho b";}
+        else{document.getElementById("resultBai1").innerText = "a không chia hết cho b";}
+
+    }
+
+    function bai2(){
+        // Bài 2: Nhập tuổi và in ra kết quả nếu tuổi học sinh đó không đủ điều kiện vào học lớp 10.
+        let age = parseInt(document.getElementById("inputAge").value);
+        if(parseInt(age)>15){document.getElementById("resultBai2").innerText = "Đủ điều kiện học lớp 10";}
+        else{document.getElementById("resultBai2").innerText = "Không đủ điều kiện học lớp 10";}
+    }
+
+    function bai3(){
+        // Bài 3: Nhập một số nguyên bất kỳ và in kết quả ra màn hình để nói cho người dùng biết số đó là lớn hay nhỏ hơn 0
+        let num1 = parseInt(document.getElementById("inputNumber").value);
+        document.getElementById("resultBai3").innerText = num1>0 ? "Số "+num1+" > 0" : num1<0 ? "Số "+num1+" < 0": "";
+    }
+
+    function bai4(){
+        // Bài 4: Nhập 3 số nguyên và tìm giá trị lớn nhất của ba số nguyên đó
+        let num1 = parseInt(document.getElementById("inputnum1").value);
+        let num2 = parseInt(document.getElementById("inputnum2").value);
+        let num3 = parseInt(document.getElementById("inputnum3").value);
+
+        let max = 0;
+        max = num1>num2?num1:num2;
+        max = max>num3?max:num3;
+        document.getElementById("resultBai4").innerText = "Số lớn nhất là: "+max;
+    }
+
+    function bai5(){
+        // Bài 5: Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ
+        let S_test = parseFloat(document.getElementById("inputScoreTest").value);
+        let S_Stest = parseFloat(document.getElementById("inputSemesterScore").value);
+        let S_Ftest = parseFloat(document.getElementById("inputFinalScore").value);
+
+        let trungbinh = S_test*0.25+S_Stest*0.25+S_Ftest*0.5;
+        document.getElementById("resultBai5").innerText = trungbinh>8?"Học lực Giỏi":
+                                                            trungbinh>6.5&&trungbinh<=8?"Học lực Khá":
+                                                            trungbinh>4&&trungbinh<=6?"Học lực Trung Bình":"Học lực Yếu";
+    }
+    
+    function bai6(){
+        // Bài 6: Kiểm tra xem 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam giác. Điều kiện để a,b,c là cạnh của một tam giác là:
+        let a = parseFloat(document.getElementById("inputA_Tria").value);
+        let b = parseFloat(document.getElementById("inputB_Tria").value);
+        let c = parseFloat(document.getElementById("inputC_Tria").value);
+
+        let result = a<=0||b<=0||c<=0?"Giá trị nhập vào phải là số dương":
+                    a+b>c&&a+c>b&&b+c>a?"3 cạnh nhập vào là cạnh của một tam giác":"3 cạnh nhập vào không là cạnh của một tam giác"
+        document.getElementById("resultBai6").innerText = result;
+    }
+
+    function bai7(){
+        // Bài 7: Kiểm tra xem một số nhập vào có phải là tuổi của một người không.
+        // Một số nguyên là tuổi của một người khi nhỏ 120 và lớn hơn 0.
+        let age = parseInt(document.getElementById("inputAgePerson").value);
+        document.getElementById("resultBai7").innerText = age>0&&age<120?"Người này đang "+age+" tuổi":"Tuổi người không chính xác";
+    }
+
+    function bai8(){
+        // Bài 8: Tính diện tích hình vuông khi biết cạnh a.
+        let a = parseFloat(document.getElementById("inputHV").value);
+
+        document.getElementById("resultBai8").innerText = "Diện tích hình vuông: "+a*a;
+    }
+
+    function bai9(){
+        // Bài 9: Tính diện tích hình chữ nhật khi biết 2 cạnh a, b.
+        let a = parseFloat(document.getElementById("inputA_Rect").value);
+        let b = parseFloat(document.getElementById("inputB_Rect").value);
+
+        document.getElementById("resultBai9").innerText = "Diện tích HCN này: "+a*b;
+    }
+
+    function bai10(){
+        // Bài 10: Tính diện tích tam giác vuông khi biết 2 cạnh kề a, b.
+        let a=parseFloat(document.getElementById("inputA_TGV").value);
+        let b=parseFloat(document.getElementById("inputB_TGV").value);
+
+        document.getElementById("resultBai10").innerText = "Diện tích tam giác vuông là: "+a*b/2;
+    }
+
+    function bai11(){
+        // Bài 11: Giải phương trình bậc 1.
+        let a=parseFloat(document.getElementById("inputA_PT1").value);
+        let b=parseFloat(document.getElementById("inputB_PT1").value);
+
+        document.getElementById("resultBai11").innerText = `phương trình: ${a}x+${b}=0 có nghiệm: x=${-b/a}`;
+    }
+
+    function bai12(){
+        // Bài 12: Giải phương trình bậc 2.
+        let a=parseFloat(document.getElementById("inputA_PT2").value);
+        let b=parseFloat(document.getElementById("inputB_PT2").value);
+        let c=parseFloat(document.getElementById("inputC_PT2").value);
+
+        let result=0;
+        let delta=b*b-4*a*c;
+        result = a==0?"Phương trình không phải dạng PTB2":
+                delta<0?"Phương trình vô nghiệm":
+                delta==0?`Nghiệm của phương trình là: ${-b/(2*a)}`: `Phương trình có 2 nghiệm: x1=${(-b + Math.sqrt(delta)) / (2 * a)}, x2 = ${(-b - Math.sqrt(delta)) / (2 * a)}`;
+        document.getElementById("resultBai12").innerText = `Phương trình ${a}x^2+${b}x+${c}=0 ${result}`;
+    }
+
+    function bai13(){
+        // Bài 13: Chuyển từ độ C sang độ F.
+        let censi = parseFloat(document.getElementById("inputCensius").value);
+
+        document.getElementById("resultBai13").innerText = `${censi} C -> ${censi*9/5+32} F`;
+    }
+
+    function bai14(){
+        // Bài 14: Chuyển từ mét sang feet
+        let meter = parseFloat(document.getElementById("inputMeter").value);
+
+        document.getElementById("resultBai14").innerText = `${meter}m -> ${meter*3.28084} feet`;
+    }
+
+    function bai15(){
+        // Bài 15: Kiểu tra kiểu dữ liệu của 2 biến
+        let var1 = document.getElementById("inputVar1").value;
+        let var2 = document.getElementById("inputVar2").value;
+        document.getElementById("resultBai15").innerText = `biến 1 có kiểu: ${typeof(var1)}; biến 2 có kiểu: ${typeof(var2)}`;
+    }
+</script>
+</html>
