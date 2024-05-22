@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập mảng</title>
+</head>
+<body>
+    <div class="bai1">
+        <h3>Bài 1: Viết một chương trình JavaScript thực hiện đảo ngược các giá trị trong một mảng đã cho. Không sử dụng phương thức reverse()</h3>
+        <label for="">Nhập vào 1 mảng:</label>
+        <input type="text" id="inputarrayReve">
+        <span id="resultBai1"></span>
+        <button type="button" onclick="bai1()">Đảo mảng</button>
+    </div>
+    <br>
+    <div class="bai2">
+        <h3>Bài 2: Viết một chương trình JavaScript để tìm một giá tri được nhập vào từ hộp thoại có nằm trong mảng hay không. Nếu có in ra vị trí của phần tử đó.</h3>
+        <label for="">Nhập vào mảng:</label>
+        <input type="text" id="inputArrayFind">
+        <label for="">Nhập giá trị cần tìm:</label>
+        <input type="text" id="inputNumberFind">
+        <span id="resultBai2"></span>
+        <button type="button" onclick="bai2()">Tìm giá trị</button>
+    </div>
+    <br>
+    <div class="bai3">
+        <h3>Bài 3: Tạo mảng có sẵn với các phẩn tử số. Cho người dùng nhập vào một số bất kỳ, sau đó tiến hành kiểm tra:</h3>
+        <label for="">Nhập vào số bất kì</label>
+        <input type="text" id="inputNumberBingo">
+        <span id="resultBai3"></span>
+        <button type="button" onclick="bai3()">Bingo</button>
+    </div>
+    <br>
+    <div class="bai4">
+        <h3>Bài 4: Cho người dùng nhập vào dãy số bất kỳ. Sử dụng split() để chuyển đổi kiểu dữ liệu từ string sang kiểu array. Tiến hành duyệt các phần tử và tìm ra phần tử có giá trị lớn nhất trong mảng</h3>
+        <label for="">Nhập vào 1 dãy số bất kì:</label>
+        <input type="text" id="inputNumberArray">
+        <span id="resultBai4"></span>
+        <button type="button" onclick="bai4()">Find max number</button>
+    </div>
+    <br>
+    <div class="bai5">
+        <h3>Bài 5: Mô phỏng ứng dụng todo list</h3>
+        <label for="" id="task">Lựa chọn: </label>
+        <input type="text" id="inputData">
+        <button type="button" id="buttonChose" onclick="bai5()">Chọn chức năng</button>
+        <pre id="resultBai5">
+            Nhập vào lựa chọn:
+            C - Create
+            R - Read
+            U - Update
+            D - Delete
+        </pre>
+    </div>
+</body>
+<script>
+    function bai1(){
+        let array1 = document.getElementById("inputarrayReve").value;
+        let arrayTmp = array1.split(',');
+        let result = [];
+        arrayTmp.forEach(item => result.push(item.trim()));
+        let result1 = [];
+        for(let i=result.length-1; i>=0; i--){
+            result1.push(result[i]);
+        }
+        document.getElementById("resultBai1").innerText = result1;
+    }
+
+    function bai2(){
+        let array = document.getElementById("inputArrayFind").value;
+        let arrayTmp = array.split(',');
+        let key = document.getElementById("inputNumberFind").value;
+        let index = arrayTmp.findIndex(item => item==key);
+        document.getElementById("resultBai2").innerText = index==-1?"Không tìm thấy giá trị":`${key} ở vị trí: ${index}`;
+    }
+
+    function bai3(){
+        let array = [1,2,3,4,5,6,7,8,9];
+        let numb = document.getElementById("inputNumberBingo").value;
+        document.getElementById("resultBai3").innerText = array.find(item => item==numb)!= undefined?"Bingo":"Chúc bạn may mắn lần sau";
+    }
+
+    function bai4(){
+        let array = document.getElementById("inputNumberArray").value;
+        let arrayTmp = array.split(',');
+        let max = parseFloat(arrayTmp[0]);
+        arrayTmp.forEach(item => {max = max>parseFloat(item)?max:parseFloat(item);});
+        document.getElementById("resultBai4").innerText = "giá trị lớn nhất của dãy là: "+max;
+    }
+
+    let todoList = ["Go to bed at 11pm","Do homework at 8pm"];
+    function bai5(){
+        
+        let chose = document.getElementById("inputData").value;
+        switch(chose){
+                case 'C':{
+                    document.getElementById("task").textContent = "Nhập dữ liệu";
+                    document.getElementById("buttonChose").textContent = "Thêm Todo List";
+                    document.getElementById("inputData").value = "";
+                    document.getElementById("buttonChose").onclick = bai5_C;
+                    let result = "\nNhập vào lựa chọn:\nC - Create\nR - Read\nU - Update\nD - Delete";
+                    document.getElementById("resultBai5").innerText = result;
+                    break;
+                }
+                case 'R':{
+                    document.getElementById("inputData").value = "";
+                    bai5_R();
+                    break;
+                }
+                case 'U':{
+                    document.getElementById("task").textContent = "Nhập chỉ số cần cập nhật";
+                    document.getElementById("buttonChose").textContent = "Sửa Todo List";
+                    document.getElementById("inputData").value = "";
+                    document.getElementById("buttonChose").onclick = bai5_UIndex;
+                    let result = "\nNhập vào lựa chọn:\nC - Create\nR - Read\nU - Update\nD - Delete";
+                    document.getElementById("resultBai5").innerText = result;
+                    break;
+                }
+                case 'D':{
+                    document.getElementById("task").textContent = "Nhập chỉ số muốn xóa";
+                    document.getElementById("buttonChose").textContent = "Xóa Todo List";
+                    document.getElementById("inputData").value = "";
+                    document.getElementById("buttonChose").onclick = bai5_D;
+                    let result = "\nNhập vào lựa chọn:\nC - Create\nR - Read\nU - Update\nD - Delete";
+                    document.getElementById("resultBai5").innerText = result;
+                    break;
+                }
+                default:
+                    document.getElementById("resultBai5").innerText = "Đang nhập sai, hãy nhập lại";
+                    break;
+            }
+    }
+
+    function bai5_C(){
+        let data = document.getElementById("inputData").value;
+        todoList.push(data);
+        bai5_R();
+    }
+
+    function bai5_R(){
+        document.getElementById("task").textContent = "Lựa chọn";
+        document.getElementById("buttonChose").textContent = "Chọn chức năng";
+        document.getElementById("inputData").value = "";
+        document.getElementById("buttonChose").onclick = bai5;
+        let result = "";
+        todoList.forEach((item, index) => {result+=(`${index}. ${item}`)+"\n";});
+        result+= "\nNhập vào lựa chọn:\nC - Create\nR - Read\nU - Update\nD - Delete";
+        document.getElementById("resultBai5").innerText = result;
+    }
+
+    function bai5_UIndex(){
+        let indexUpdate = document.getElementById("inputData").value;
+        console.log("index = ", indexUpdate);
+        document.getElementById("task").textContent = "Nhập nội dung cần cập nhật";
+        document.getElementById("buttonChose").textContent = "Cập nhật Todo List";
+        document.getElementById("inputData").value = "";
+        document.getElementById("buttonChose").onclick = function(){bai5_U(indexUpdate)};
+    }
+
+    function bai5_U(index){
+        let content = document.getElementById("inputData").value;
+        console.log("update ",index);
+        document.getElementById("task").textContent = "Nhập nội dung cần cập nhật 1";
+        todoList[index] = content;
+        bai5_R();
+    }
+
+    function bai5_D(){
+        let index = document.getElementById("inputData").value;
+        todoList = todoList.filter((item, indexArray) => indexArray!=parseInt(index));
+        bai5_R();
+    }
+
+
+</script>
+</html>
